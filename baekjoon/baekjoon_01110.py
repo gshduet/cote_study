@@ -44,8 +44,8 @@ cycle_len = 0
 init_number = int(input())
 before_func = init_number
 
-while init_number >= 0 and init_number <= 99 :
-    before_left  = before_func // 10
+while init_number >= 0 and init_number <= 99:
+    before_left = before_func // 10
     before_right = before_func % 10
 
     after_func = before_left + before_right
@@ -54,7 +54,7 @@ while init_number >= 0 and init_number <= 99 :
     before_func = before_right * 10 + after_right
     cycle_len += 1
 
-    if before_func == init_number :
+    if before_func == init_number:
         break
 
 print(cycle_len)

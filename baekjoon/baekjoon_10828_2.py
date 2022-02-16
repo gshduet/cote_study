@@ -1,30 +1,36 @@
 import sys
 input = sys.stdin.readline
- 
+
 number_of_order = int(input())
-stack           = []
- 
+stack = []
+
+
 def push(value):
     stack.append(value)
- 
+
+
 def pop():
     if not stack:
         return -1
     return stack.pop()
- 
+
+
 def size():
     return len(stack)
- 
+
+
 def empty():
     if not stack:
         return 1
     return 0
- 
+
+
 def top():
     if not stack:
         return -1
     return stack[-1]
- 
+
+
 for _ in range(number_of_order):
     command = input().split()
     if 'push' in command:

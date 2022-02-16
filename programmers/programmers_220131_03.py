@@ -36,9 +36,10 @@ answer = 0
 scoville = [1, 2, 3, 9, 10, 12]
 K = 7
 
+
 def solution(scoville, K):
     answer = 0
-    
+
     while scoville[0] < K:
         scoville[0] = scoville[0] + scoville[1]*2
         del scoville[1]
@@ -46,5 +47,6 @@ def solution(scoville, K):
         answer += 1
 
     return answer
+
 
 print(solution(scoville, K))
