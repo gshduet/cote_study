@@ -10,10 +10,15 @@
 출력
 첫째 줄에 최댓값을 출력하고, 둘째 줄에 최댓값이 몇 번째 수인지를 출력한다.
 '''
-array = []
+# array = []
 
-for i in range(9):
-    array.append(int(input()))
+# for _ in range(9):
+#     array.append(int(input()))
+
+# print(max(array))
+# print(array.index(max(array)) + 1)
+
+array = [int(input()) for _ in range(9)]
 
 print(max(array))
 print(array.index(max(array)) + 1)
