@@ -9,12 +9,10 @@ n은 1이상 8000000000 이하인 자연수입니다.
 input = 118372  output = 873211
 '''
 
-# def solution(n):
-#     arr = list(str(n))
-#     arr.sort(reverse=True)
+def solution(n):
+    arr = list(str(n))
+    arr.sort(reverse=True)
 
-#     answer = int("".join(arr))
+    answer = int("".join(arr))
 
-#     return answer
-
-print(list('apple'))
+    return answer
