@@ -18,18 +18,19 @@ input "try hello world"     output "TrY HeLlO WoRlD"
 
 
 def solution(s):
-    arr = list(s.split(' '))
     answer = []
+    words = list(s.split(' '))
 
-    for word in arr:
-        spelling = list(str(word))
+    for word in words:
+        spelling = list(word)
 
         for i in range(len(spelling)):
             if i % 2 == 0:
                 answer.append(spelling[i].upper())
-
+                print(answer)
             else:
                 answer.append(spelling[i].lower())
+                print(answer)
 
         answer.append(' ')
 
@@ -37,22 +38,23 @@ def solution(s):
     answer = answer.strip()
 
     return answer
+''' 틀린 이유 : 중간저장 없이 한큐에 전부 해결하려다 보니 다음 단어로 넘어가는 과정에서 강제로 공백을 넣는 과정이 추가되었고 이 부분이 문제가 됨'''
 
-# arr = list(input().split(' '))
-# answer = []
-# print(f'arr = {arr}')
+# def solution(s):
+#     answer = []
+#     words = list(s.split(' ')) # words = ['try', 'hello', 'world']
+    
+#     for word in words: # 'try' > 'hello' > 'world'
+#         new_word = ''
+#         for i in range(len(word)):
+#             if i % 2 == 0:
+#                 new_word += word[i].upper()
+#             else:
+#                 new_word += word[i].lower()
+            
+#         answer.append(new_word)
 
-# for word in arr:
-#     spelling = list(str(word))
+#     return ' '.join(answer)
 
-#     for i in range(len(spelling)):
-#         if i % 2 == 0:
-#             answer.append(spelling[i].upper())
-
-#         else :
-#             answer.append(spelling[i])
-
-#     answer.append(' ')
-
-
-print(solution(''))
+s = 'try hello world '
+print(solution(s))
