@@ -27,7 +27,7 @@ def solution(strings, n):
 빈 dictionary 자료형에 주어진 단어의 n번째 글자를 key로 설정했으나 이렇게 될 경우 중복된 key 값은 담을 수 없어 실패
 '''
 def solution(strings, n):
-    return sorted(strings, key = lambda strings : strings[n])
+    return sorted(strings, key = (lambda strings : strings[n])(strings[0]))
 
 strings = ["acbe", "acbd", "cdx"]
 n = 1
