@@ -17,6 +17,7 @@ input "try hello world"     output "TrY HeLlO WoRlD"
 '''
 
 
+'''
 def solution(s):
     answer = []
     words = list(s.split(' '))
@@ -38,23 +39,24 @@ def solution(s):
     answer = answer.strip()
 
     return answer
-''' 틀린 이유 : 중간저장 없이 한큐에 전부 해결하려다 보니 다음 단어로 넘어가는 과정에서 강제로 공백을 넣는 과정이 추가되었고 이 부분이 문제가 됨'''
+'''
+# 틀린 이유 : 중간저장 없이 한큐에 전부 해결하려다 보니 다음 단어로 넘어가는 과정에서 강제로 공백을 넣는 과정이 추가되었고 이 부분이 문제가 됨
 
-# def solution(s):
-#     answer = []
-#     words = list(s.split(' ')) # words = ['try', 'hello', 'world']
+def solution(s):
+    answer = []
+    words = list(s.split(' ')) # words = ['try', 'hello', 'world']
     
-#     for word in words: # 'try' > 'hello' > 'world'
-#         new_word = ''
-#         for i in range(len(word)):
-#             if i % 2 == 0:
-#                 new_word += word[i].upper()
-#             else:
-#                 new_word += word[i].lower()
+    for word in words: # 'try' > 'hello' > 'world'
+        new_word = ''
+        for i in range(len(word)):
+            if i % 2 == 0:
+                new_word += word[i].upper()
+            else:
+                new_word += word[i].lower()
             
-#         answer.append(new_word)
+        answer.append(new_word)
 
-#     return ' '.join(answer)
+    return ' '.join(answer)
 
 s = 'try hello world '
 print(solution(s))
