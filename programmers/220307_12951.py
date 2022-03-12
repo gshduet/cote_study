@@ -17,7 +17,7 @@ def solution(s):
     answer = s.split(' ')
 
     for i, words in enumerate(answer):
-        answer[i] = words.lower().capitalize()
+        answer[i] = words.capitalize()
     
     answer = ' '.join(answer)
 
