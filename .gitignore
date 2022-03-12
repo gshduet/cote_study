@@ -35,3 +35,4 @@ Temporary Items
 
 *_blank.py
 .idea
+*/__pycache__/
