@@ -20,7 +20,7 @@ numbers의 원소는 0 이상 1,000 이하입니다.
 arr = [3, 30, 34, 5, 9]
 arr = list(map(str, arr))
 
-arr = sorted(arr, key=lambda x: (x[0], len(x), x[0]), reverse=True)
+arr = sorted(arr, key=lambda x: (x[0], len(x)), reverse=True)
 print(arr)
 answer = ''.join(arr)
 print(answer, type(answer))

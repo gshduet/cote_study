@@ -13,12 +13,25 @@ s는 알파벳과 숫자, 공백문자(" ")로 이루어져 있습니다.
 '''
 
 
+# def solution(s):
+#     s = s.lower()
+#     answer = s.split(' ')
+#     print(answer)
+
+#     for i in answer:
+#         print(i)
+#         i[0] = i[0].upper()
+#         print(i)
+
+#     return ' '.join(answer)
+
+
 def solution(s):
     answer = s.split(' ')
 
     for i, words in enumerate(answer):
         answer[i] = words.capitalize()
-    
+
     answer = ' '.join(answer)
 
     return answer
