@@ -37,5 +37,6 @@ def solution(s):
 
     return answer
 
+
 s = '3people unFollowed me'
 print(solution(s))
