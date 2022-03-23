@@ -36,3 +36,9 @@ Temporary Items
 *_blank.py
 .idea
 __pycache__/
+권상현*
+
+.json
+.vscode/
+Pipfile
+Pipfile.lock
