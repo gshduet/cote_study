@@ -18,5 +18,16 @@ input n = 2, m = 5      output [1, 10]
 '''
 
 def solution(n, m):
-    answer = []
-    return answer
+    m_divisors, n_divisors = [], []
+
+    for i in range(int(m**0.5)+1):
+        if m % i == 0:
+            m_divisors(i)
+            m_divisors(int(m/i))
+    
+    for i in range(int(n**0.5)+1):
+        if m % i == 0:
+            m_divisors(i)
+            m_divisors(int(n/i))
+    
+    
