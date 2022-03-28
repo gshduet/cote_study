@@ -29,9 +29,17 @@ def solution(s, n):
 
     return answer
 
+@time_check
+def solution2(s, n):
+    s = list(s)
+    for i in range(len(s)):
+        if s[i].isupper():
+            s[i]=chr((ord(s[i])-ord('A')+ n)%26+ord('A'))
+        elif s[i].islower():
+            s[i]=chr((ord(s[i])-ord('a')+ n)%26+ord('a'))
+
+    return "".join(s)
+
 s = 'dgsioagjoi pwr uewoiu oidpuoijoigje w oij oij foisdj foif ofsdlkgjfiowerugoiprejgkdfjlkj dslkfjweoi toipweutio weuori jewoifjoiwjoptweiotdksjfoipwuetopiqwtoidksjflk  f oij oiwej ptoi jewqoiewoi ksdjli' * 40
 print(solution(s, 5))
-print(len(s))
-
-# for i in s:
-    # print(f'{i}를 ascii 변환하면 = {ord(i)}')
+print(solution2(s, 5))
