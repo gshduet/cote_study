@@ -11,7 +11,7 @@ s에는 둘 이상의 정수가 공백으로 구분되어 있습니다.
 def solution(s):
     convert_int = list(map(int, s.split(' ')))
     
-    return convert_int
+    return f'{str(min(convert_int))} {str(max(convert_int))}'
 
 s = "-1 -2 -3 -4"
 print(solution(s))
