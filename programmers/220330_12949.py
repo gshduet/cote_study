@@ -12,10 +12,8 @@ def solution(arr1, arr2):
     answer = []
 
     for arr1_row in arr1:
-        print(f'arr1_row = {arr1_row}')
         answer_row = []
         for arr2_col in zip(*arr2):
-            print(f'arr2_col = {arr2_col}')
             answer_index = []
             for i in zip(arr1_row, arr2_col):
                 answer_index.append(i[0] * i[1])
@@ -25,7 +23,27 @@ def solution(arr1, arr2):
 
     return answer
 
+
+
+def solution1(arr1, arr2):
+    answer = []
+
+    for arr1_row in arr1:
+        answer_row = []
+        for arr2_col in zip(*arr2):
+            answer_index = 0
+            for x, y in zip(arr1_row, arr2_col):
+                answer_index += x * y
+            answer_row.append(answer_index)
+        answer.append(answer_row)
+
+    return answer
+
 def another_solution(A, B):
     return [[sum(a*b for a, b in zip(A_row,B_col)) for B_col in zip(*B)] for A_row in A]
 
-    
+
+arr1 = [[2, 3, 2], [4, 2, 4], [3, 1, 4]]
+arr2 = [[5, 4, 3], [2, 4, 1], [3, 1, 1]]
+
+print(solution1(arr1, arr2))
