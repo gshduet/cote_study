@@ -42,3 +42,4 @@ __pycache__/
 .vscode/
 Pipfile
 Pipfile.lock
+not_yet_*
