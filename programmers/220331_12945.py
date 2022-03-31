@@ -21,6 +21,6 @@ def solution(n):
     for _ in range(n):
         a, b = b, a+b
     
-    return b
+    return b % 1234567
 
 print(solution(5))
