@@ -13,19 +13,32 @@
 
 
 def solution(s):
-    if len(s) % 2 != 0: 
-        return False
+    while s:
+        if s[0] != '(' or s[-1] != ')':
+            return False
 
-    if s[0] != '(' or s[-1] != ')':
-        return False
-    
-    s = s.replace('(', '')
-    s = s.replace(s[s.index(')')], '')
+        if len(s) % 2 != 0:
+            return False
+
+        s = s.replace('()', '')
 
     return True
 
 
-s = '((((()))))()'
-s = '())))((()'
+def solution(s):
+    cached = []
+    for i in s:
+        if i == '(':
+            cached.append(i)
+
+        else:
+            if len(cached) == 0:
+                return False
+            else:
+                cached.pop()
+
+    return len(cached) == 0
+
+
+s = '()))((()'
 print(solution(s))
-# print(s)
