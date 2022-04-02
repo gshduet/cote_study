@@ -10,7 +10,7 @@ H-Index는 과학자의 생산성과 영향력을 나타내는 지표입니다. 
 논문별 인용 횟수는 0회 이상 10,000회 이하입니다.
 """
 from utils import time_check
-from time import time
+import random
 
 
 @time_check
@@ -28,6 +28,7 @@ def solution01(citations):
             return i
 
 
+@time_check
 def solution02(citations):
     citations = sorted(citations)
     l = len(citations)
@@ -37,14 +38,15 @@ def solution02(citations):
     return 0
 
 
+@time_check
 def solution03(citations):
     citations.sort(reverse=True)
     answer = max(map(min, enumerate(citations, start=1)))
     return answer
 
 
-citations = [10, 9, 8, 7, 6]
-
-
+citations = random.sample(range(10001), random.randint(1,1000))
 
 solution01(citations)
+solution02(citations)
+solution03(citations)
