@@ -22,11 +22,12 @@ signs가 [false,false,true] 이므로, 실제 수들의 값은 각각 -1, -2, 3�
 
 def solution(absolutes, signs):
     dic = {}
+    
     for i in range(len(absolutes)):
-        if signs[i] == 1:
-            dic[absolutes[i]] = absolutes[i]
-        elif signs[i] == 0:
-            dic[absolutes[i]] = absolutes[i] * (-1)
+        if signs[i] == True:
+            dic[i] = absolutes[i]
+        else:
+            dic[i] = absolutes[i] * (-1)
     
     answer = sum(dic.values())
     return answer
