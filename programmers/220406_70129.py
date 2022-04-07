@@ -15,6 +15,18 @@ s에는 '1'이 최소 하나 이상 포함되어 있습니다.
 """
 
 
+def first_solution(s):
+    func, zero = 0, 0
+
+    while s != "1":
+        new_s = s.count("1")
+        zero += len(s) - new_s
+        s = bin(new_s)[2:]
+        func += 1
+
+    return [func, zero]
+
+# 첫 번째 재귀함수
 def s_binary(s_change, func_count, zero_count):
     if s_change == "1":
         return [func_count, zero_count]
@@ -32,25 +44,25 @@ def s_binary(s_change, func_count, zero_count):
 
     return s_binary(ss, func_count, zero_count)
 
+# 두 번째 재귀함수
+def s_recursion(s_change, func_count, zero_count):
+    if s_change == "1":
+        return [func_count, zero_count]
+
+    func_count += 1
+    zero_count += s_change.count("0")
+    s_change = bin(len(s_change) - s_change.count("0"))[2:]
+
+    return s_recursion(s_change, func_count, zero_count)
+
 
 def solution(s):
-    answer = s_binary(s, 0, 0)
+    # answer = s_binary(s, 0, 0)
+    answer = s_recursion(s, 0, 0)
     return answer
-
-
-def other_solution(s):
-    func, zero = 0, 0
-
-    while s != "1":
-        new_s = s.count("1")
-        zero += len(s) - new_s
-        s = bin(new_s)[2:]
-        func += 1
-    
-    return [func, zero]
 
 
 s = "110010101001"
 
-# print(solution(s))
-print(other_solution(s))
+print(solution(s))
+# print(other_solution(s))
